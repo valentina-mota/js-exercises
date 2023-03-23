@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .importante{
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+            margin: 10px;
+        }
+
+        .bg-blu{
+            background-color: #00F;
+            color: #FFF;
+        }
+
+
+    </style>
+</head>
+<body>
+ <!--Creare una pagina HTML contenente un pulsante con id "trigger" e testo "avvia", due div che abbiano classe "importante" e id "primo-div" e "secondo-div.
+
+Quando l'utente preme il pulsante, i due div devono acquisire sfondo blu, nel primo deve essere inserito un paragrafo contenente il testo "primo div", nel secondo deve essere inserito un paragrafo contenente il testo "secondo div"-->
+
+    <button id="trigger">avvia</button>
+
+    <div class="importante" id="primo-div"></div>
+    <div class="importante" id="secondo-div"></div>
+    
+<script>
+    //aggancio l'evento che segnala che il DOM è pronto
+document.addEventListener("DOMContentLoaded", manager);
+
+function manager(){
+    //aggancio la funzione di gestione all'evento click del pulsante
+    document.getElementById("trigger").addEventListener("click", gestisci_div);
+
+    /**
+     * gestisce la modifica di tutti i div
+     */
+    function gestisci_div(){
+        modifica_div("primo-div", "bg-blu", "primo div");
+        modifica_div("secondo-div", "bg-blu", "secondo div");
+    }
+
+    /**
+     * 
+     * @param {string} id id del DIV da modificare
+     * @param {string} classe classe da assegnare al DIV
+     * @param {string} text testo da inserire nel DIV
+     */
+    function modifica_div(id, classe, text){
+        //quando si attiva la funzione, carico il div
+        let mio_div = document.getElementById(id);
+
+        //aggiungo la classe
+        mio_div.classList.add(classe);
+
+        //creo e inserisco il testo
+        let mio_paragrafo = document.createElement("p");
+        mio_paragrafo.innerText = text;
+
+        mio_div.appendChild(mio_paragrafo);
+    }
+}
+    
+</script>
+</body>
+</html>

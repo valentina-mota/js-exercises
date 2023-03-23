@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+          width: 50px;
+          height: 50px;
+          background-color: blue;
+          margin: 5px;
+          float: left;
+        }
+
+        .rosso{
+          background-color: #F00;
+        }
+    </style>
+    
+  </head>
+  <body>
+    <!--Realizza una pagina web costituita da due pulsanti, un paragrafo vuoto con ID "testo" e 10 div. I pulsanti devono avere rispettivamente testo "conta" e "colora" e devono avere rispettivamente ID "btnConta" e "btnColora". Quando l'utente preme il pulsante "btnConta", nel paragrafo "testo" deve comparire il numero di div presenti nella pagina (per es. ci sono 25 div). Quando l'utente preme il pulsante "btnColora", tutti i div devono diventare rossi-->
+    <button id="btnConta">conta</button>
+    <button id="btnColora">colora</button>
+    <p id="testo"></p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      //aggancio i gestori di evento ai pulsanti
+document.getElementById("btnConta").addEventListener("click", conta);
+document.getElementById("btnColora").addEventListener("click", colora);
+
+function conta(){
+    //prelevo i div
+    let miei_div = document.getElementsByTagName("div");
+    //prelevo l'oggetto nel quale scrivere il risultato
+    let output = document.getElementById("testo");
+    //scrivo nell'oggetto
+    output.textContent = "ci sono " + miei_div.length + " div";
+}
+
+function colora(){
+    //prelevo i div
+    let miei_div = document.getElementsByTagName("div");
+
+    //ciclo sui div per aggiungere la classe opportuna
+    for (i = 0; i < miei_div.length; i++){
+        miei_div[i].classList.add("rosso");
+    }
+}
+
+    </script>
+  </body>
+</html>

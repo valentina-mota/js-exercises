@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creazione di un nuovo oggetto</title>
+</head>
+<body>
+    <form action="">
+        Abbiamo creato tre oggetti vino: <I>sangiovese, trebbiano e barolo</I>
+        <br><br>
+        Premendo il bottone, avrete visualizzate le proprietà dell'oggetto 'trebbiano':
+        <br><br>
+        <input name="butVino" type="button" value="Proprietà vino" onclick="trebbiano.stampa()"> 
+
+    </form>
+
+   <script>
+    let sangiovese=new vino("Sangiovese", "Tenuta Amalia", 1999);
+    let trebbiano=new vino('Trebbiano',' Fattoria Paradiso',' 2000');
+    let barolo=new vino("Barolo", "Villa Italia", 1987);
+
+    function stampa() {
+        document.write(this.nome+",<B>"+this.casa+"</B>,"+this.anno);
+    }
+
+    function vino(nome,casa,anno) {
+        this.nome=nome;
+        this.casa=casa;
+        this.anno=anno;
+        this.stampa=stampa;
+    }
+
+   </script> 
+</body>
+</html>

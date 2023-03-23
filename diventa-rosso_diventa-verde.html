@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>diventa-rosso_diventa-verde</title>
+<style>
+	
+	div {
+    width: 50px;
+    height: 50px;
+    background-color: lightgray;
+    margin: 5px;
+  }
+	
+	.rosso {
+		background-color: red;
+	}
+	
+	.verde {
+		background-color: green;
+	}
+	
+</style>
+	   
+</head>
+
+<body>
+<!--Realizzare una pagina che contiene due pulsanti, che hanno testo Rosso e Verde e ID "btnRosso" e "btnVerde" rispettivamente, e 10 div con classe "div".
+
+Quando l'utente clicca su btnRosso, tutti i div con classe "div" presenti nella pagina devono acquisire la classe "rosso".
+
+Quando l'utente clicca su btnVerde, tutti i div con classe "div" presenti nella pagina devono acquisire la classe "verde".-->
+
+	<button id="btnRosso">Rosso</button>
+	<button id="btnVerde">Verde</button>
+	
+	<div class="div"></div>
+	<div class="div"></div>
+	<div class="div"></div>
+	<div class="div"></div>
+	<div class="div"></div>
+	<div class="div"></div>
+	<div class="div"></div>
+	<div class="div"></div>
+	<div class="div"></div>
+	<div class="div"></div>
+	
+	
+	
+<script>
+//aggancio i gestori di evento ai pulsanti
+document.getElementById("btnRosso").addEventListener("click", colorarosso);
+document.getElementById("btnVerde").addEventListener("click", coloraverde);
+	
+	function colorarosso(){
+    //prelevo i div
+    let miei_div = document.getElementsByTagName("div");
+		
+	//ciclo sui div per aggiungere la classe opportuna
+    for (i = 0; i < miei_div.length; i++){
+        miei_div[i].classList.add("rosso");
+    }
+}
+
+	function coloraverde(){
+    //prelevo i div
+    let miei_div = document.getElementsByTagName("div");
+		
+	//ciclo sui div per aggiungere la classe opportuna
+    for (i = 0; i < miei_div.length; i++){
+        miei_div[i].classList.add("verde");
+    }
+}
+
+	
+	
+	
+</script>	
+</body>
+</html>
